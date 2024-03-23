@@ -2,29 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic-Tac-Toe Game</title>
     <link rel="stylesheet" href="TICTACTOE.css" />
   </head>
-  <body>
-    <h1>Tic-Tac-Toe Game</h1>
-    <div class='mainclass' id="main">
-      <div class="cell" id = "s1" data-cell></div>
-      <div class="cell" id = "s2" data-cell></div>
-      <div class="cell" id = "s3" data-cell></div>
-      <div class="cell" id = "s4" data-cell></div>
-      <div class="cell" id = "s5" data-cell></div>
-      <div class="cell" id = "s6" data-cell></div>
-      <div class="cell" id = "s7" data-cell></div>
-      <div class="cell" id = "s8" data-cell></div>
-      <div class="cell" id = "s9" data-cell></div>
+  <body class="main">
+    <div class ="game-container">
+      <h1>Tic-Tac-Toe Game</h1>
+      <h2 id="SubTitle"></h2>
+      <div class="gridclass" id="main">
+        <div class="cell" id="s1" data-cell></div>
+        <div class="cell" id="s2" data-cell></div>
+        <div class="cell" id="s3" data-cell></div>
+        <div class="cell" id="s4" data-cell></div>
+        <div class="cell" id="s5" data-cell></div>
+        <div class="cell" id="s6" data-cell></div>
+        <div class="cell" id="s7" data-cell></div>
+        <div class="cell" id="s8" data-cell></div>
+        <div class="cell" id="s9" data-cell></div>
+      </div>
+          <p id="Response">
+            Test
+          </p>
+        <button id="restartButton">Restart</button>
     </div>
-    <div class = "winning-message" id= "winningMe5sage">
-      <div id="winningMessageText"></div>
-      <button id="restartButton">Restart<button>
-    </div>
-  </body> 
   <script src="TICTACTOE.js"></script>
 </html>
-  
