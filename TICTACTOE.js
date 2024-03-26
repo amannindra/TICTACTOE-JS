@@ -8,8 +8,12 @@ const s7 = document.getElementById("s7");
 const s8 = document.getElementById("s8");
 const s9 = document.getElementById("s9");
 const Responce = document.getElementById("Response");
+const winners = document.getElementById("win");
 let game = true;
 let filled = 0;
+let player1 = 0;
+let player2 = 0;
+let tie = 0;
 let player = true;
 const cell = document.getElementById("cell");
 
@@ -18,10 +22,17 @@ function sleep(ms) {
 }
 async function clickxy(e) {
   check();
-  if (game == false || allFilled()) {
+  if (!game) {
     console.log(game);
     console.log("Calling Reset");
-    reset();
+    winners.innerText = "Player1: " + player1 +" Tie: " +tie+  " Player2: " + player2;
+    reset(); 
+    return;
+  }
+  if(allFilled() && game){
+    tie+=1;
+    winners.innerText = "Player1: " + player1 +" Tie: " +tie+  " Player2: " + player2;
+    reset(); 
     return;
   }
   if (e.target.innerText == "") {
@@ -34,6 +45,8 @@ async function clickxy(e) {
     console.log(e.target);
   }
 }
+
+/*
 function winner(){
    if(player && !allFilled()) {
     Responce.innerText = "X wins";
@@ -41,7 +54,7 @@ function winner(){
    else{
     Responce.innerText = "O wins";
    }
-}
+}*/
 function allFilled() {
   if (
     s1.innerText != "" &&
@@ -76,6 +89,7 @@ function reset() {
 function check() {
   if (s1.innerText == "X" && s2.innerText == "X" && s3.innerText == "X") {
     console.log("Check");
+    player1 +=1;
     game = false;
   } else if (
     s4.innerText == "X" &&
@@ -83,6 +97,7 @@ function check() {
     s6.innerText == "X"
   ) {
     console.log("Check");
+    player1 +=1;
     game = false;
   } else if (
     s7.innerText == "X" &&
@@ -90,6 +105,7 @@ function check() {
     s9.innerText == "X"
   ) {
     console.log("Check");
+    player1 +=1;
     game = false;
   } else if (
     s1.innerText == "X" &&
@@ -97,6 +113,7 @@ function check() {
     s7.innerText == "X"
   ) {
     console.log("Check");
+    player1 +=1;
     game = false;
   } else if (
     s2.innerText == "X" &&
@@ -104,6 +121,7 @@ function check() {
     s8.innerText == "X"
   ) {
     console.log("Check");
+    player1 +=1;
     game = false;
   } else if (
     s3.innerText == "X" &&
@@ -111,6 +129,7 @@ function check() {
     s9.innerText == "X"
   ) {
     console.log("Check");
+    player1 +=1;
     game = false;
   } else if (
     s1.innerText == "X" &&
@@ -118,6 +137,7 @@ function check() {
     s9.innerText == "X"
   ) {
     console.log("Check");
+    player1 +=1;
     game = false;
   } else if (
     s3.innerText == "X" &&
@@ -125,6 +145,7 @@ function check() {
     s7.innerText == "X"
   ) {
     console.log("Check");
+    player1 +=1;
     game = false;
   } else if (
     /* Time for O*/
@@ -133,6 +154,7 @@ function check() {
     s3.innerText == "O"
   ) {
     console.log("Check");
+    player2 +=1;
     game = false;
   } else if (
     s4.innerText == "O" &&
@@ -140,6 +162,7 @@ function check() {
     s6.innerText == "O"
   ) {
     console.log("Check");
+    player2 +=1;
     game = false;
   } else if (
     s7.innerText == "O" &&
@@ -147,6 +170,7 @@ function check() {
     s9.innerText == "O"
   ) {
     console.log("Check");
+    player2 +=1;
     game = false;
   } else if (
     s1.innerText == "O" &&
@@ -154,6 +178,7 @@ function check() {
     s7.innerText == "O"
   ) {
     console.log("Check");
+    player2 +=1;
     game = false;
   } else if (
     s2.innerText == "O" &&
@@ -161,6 +186,7 @@ function check() {
     s8.innerText == "O"
   ) {
     console.log("Check");
+    player2 +=1;
     game = false;
   } else if (
     s3.innerText == "O" &&
@@ -168,6 +194,7 @@ function check() {
     s9.innerText == "O"
   ) {
     console.log("Check");
+    player2 +=1;
     game = false;
   } else if (
     s1.innerText == "O" &&
@@ -175,6 +202,7 @@ function check() {
     s9.innerText == "O"
   ) {
     console.log("Check");
+    player2 +=1;
     game = false;
   } else if (
     s3.innerText == "O" &&
@@ -182,6 +210,7 @@ function check() {
     s7.innerText == "O"
   ) {
     console.log("Check");
+    player2 +=1;
     game = false;
   }
   if (game == false) {
